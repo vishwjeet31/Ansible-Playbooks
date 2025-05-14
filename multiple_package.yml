@@ -1,0 +1,12 @@
+---
+- name: This playbook install multipal package
+  hosts: all
+  become: true
+  tasks:
+    - name: installing packages
+      yum:
+        name: ['git', 'tree', 'httpd', 'which', 'wget', 'telnet','docker']
+        state: present
+
+
+          

@@ -1,0 +1,14 @@
+---
+- name: This playbook create user by using var
+  hosts: all
+  become: true
+  vars:
+  - user: bhavana
+
+  tasks:
+    - name: creating user {{user}}
+      user:
+        name: "{{user}}"
+      
+
+
