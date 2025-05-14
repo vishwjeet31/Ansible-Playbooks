@@ -1,0 +1,12 @@
+---
+- name: This playbook copy file
+  hosts: all
+  become: true
+  tasks:
+  - name: copy file
+    copy:
+      src: /home/ansadmin/index.html
+      dest: /home/ansadmin
+      mode: 0777
+      owner: rohit
+

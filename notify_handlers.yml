@@ -1,0 +1,19 @@
+---
+- name: This playbook for notify and handlers function
+  hosts: all
+  become: true
+  tasks:
+
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+      notify: start apache
+
+  handlers:
+    - name: start apache
+      service:
+        name: httpd
+        
+        state: started
+
